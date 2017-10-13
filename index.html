@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Matt Herman</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
         <style>
@@ -90,9 +91,40 @@
             .link a:hover {
                 color: yellow;
             }
+            .background {
+                position: fixed;
+                background-image: url('background.JPG');
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background-position: center top;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
+        <div class="parallax background"></div>
+    
+        <script> //parallax background
+            (function(){
+
+        var parallax = document.querySelectorAll(".parallax"),
+            speed = -0.5;
+
+        window.onscroll = function(){
+            [].slice.call(parallax).forEach(function(el,i){
+
+            var windowYOffset = window.pageYOffset,
+                elBackgrounPos = "50% " + (windowYOffset * speed) + "px";
+
+                el.style.backgroundPosition = elBackgrounPos;
+
+                });
+            };
+
+        })();
+        </script>
+        
         <div class="header">MATT HERMAN</div>
         <!--<table class="header-bar">
             <tr>
