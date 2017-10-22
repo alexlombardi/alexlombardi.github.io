@@ -2,17 +2,18 @@
     <head>
         <title>Matt Herman</title>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="jquery.backstretch.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
         <style>
             @font-face {
-                font-family: 'SFCompactDisplay-Thin';
-                src: url('SFCompactDisplay-Thin.otf') format('opentype');
+                font-family: 'titlefont';
+                src: url('nyala.ttf') format('truetype');
                 font-weight: normal;
                 font-style: normal;
             }
             html {
-                font-family: 'SFCompactDisplay-Thin';
+                font-family: 'titlefont';
                 font-weight: bold;
                 width: 100%;
             }
@@ -20,147 +21,84 @@
                 text-decoration: none;
             }
             body {
-                background: url('background_2.jpg');
-                background-attachment: fixed;
+                background-color: #000;
                 margin-top: 0px;
                 margin-right: 0px;
                 margin-bottom: 0px;
                 margin-left: 0px;
                 width: 100%;
             }
-            body > iframe:first-child { 
-                display: none !important; 
-                
-            }
             .header {
                 margin: 0 auto;
-                padding-top: 30px;
-                padding-bottom: 30px;
-                font-size: 10vw;
+                font-size: 4vw;
                 width: 100%;
+                padding: 10px 0;
                 text-align: center;
-                background: #5c97f0;
-                color: #040080;
+                background: #8c8c8c;
+                color: #9f3202;
                 text-shadow:
                    -1px -1px 0 #fff,  
                    1px -1px 0 #fff,
                    -1px 1px 0 #fff,
                    1px 1px 0 #fff;
-                box-shadow: 0 10px 10px 0 black;
-            }
-            .subtitle {
-                font-size: 3vw;
-                font-style: italic;
-                font-family: sans-serif;
-                text-shadow: none;
-            }
-            .header-bar {
-                background: #2c8c40;
-                width: 100%;
-                text-align: center;
-                border: 2px solid #69c071;
-                font-size: 20pt;
-                color: #69c071;
-            }
-            .header-bar td {
-                border: 2px solid #69c071;
-                width: 50%;
+                box-shadow: 0 30px 30px 0 black;
             }
             .link-container {
-                margin: 50px auto;
-            }
-            .link-container td {
-                width: 50%;
+                margin-top: 8vw;
+                width: 100%;
                 text-align: center;
             }
             .link {
-                margin: 70px 0;
-                background: white;
-                width: 100%;
-                font-size: 10vw;
-                height: 450px;
-                text-align: center;
-                border-top: 1px solid white;
-                border-bottom: 1px solid white;
-                display: flex;
-                justify-content:center;
-                align-content:center;
-                flex-direction:column;
-            }
-            .link a {
-                color: #fff;
-                opacity: 0.5;
-                transition: color 1s, opacity 1s;
+                margin: 0 auto;
+                display: inline-block;
+                vertical-align: text-top;
             }
             .link-a {
-                background: url(https://i.imgur.com/rCQIKgO.png) no-repeat center;
-                background-size: cover;
+                background-image: url("kids_on_campus_gray.png");
+                background-size: 30vw 30vw;
+                width: 30vw;
+                height: 30vw;
+            }
+            .link-a:hover {
+                background-image: url("kids_on_campus.png");
+                background-size: 30vw 30vw;
             }
             .link-b {
-                background: url(https://i.imgur.com/RQy47RV.png) no-repeat center;
-                background-size: cover;
+                font-size: 28vw;
+                color: #4b4b4b;
             }
-            .link a:hover {
-                color: yellow;
-                opacity: 1;
+            .link-b:hover {
+                color: #f89839;
             }
-            .background {
-                position: fixed;
-                background-image: url('background_1.png');
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                background-position: center top;
-                text-align: center;
+            .link-spacer {
+                width: 50px;
+                height: 50px;
             }
         </style>
     </head>
     <body>
-        <div class="parallax background"></div>
-    
-        <script> //parallax background
-            (function(){
-
-        var parallax = document.querySelectorAll(".parallax"),
-            speed = -0.5;
-
-        window.onscroll = function(){
-            [].slice.call(parallax).forEach(function(el,i){
-
-            var windowYOffset = window.pageYOffset,
-                elBackgrounPos = "50% " + (windowYOffset * speed) + "px";
-
-                el.style.backgroundPosition = elBackgrounPos;
-
-                });
-            };
-
-        })();
+        <script>
+            $.backstretch([
+                  "matt_website_bg_1.jpg"
+                , "matt_website_bg_2.jpg"
+                , "matt_website_bg_4.jpg"
+                , "matt_website_bg_5.jpg"
+                , "matt_website_bg_6.jpg"
+            ], {duration: 3000, fade: 750});
         </script>
         
-        <div class="header">MATT HERMAN<br>
-            <div class="subtitle">"a very funny man"</div>
-        </div>
-        <!--<table class="header-bar">
-            <tr>
-                <td>Links</td>
-                <td>About Me</td>
-            </tr>
-        </table>-->
-        <div class="link link-a">
-            <a href="https://www.youtube.com/channel/UCot9vB4XaMxR06kfWvOy5LA?view_as=subscriber">
-                <div class="fa fa-link">
-                    <div style="font-family: sans-serif; display: inline; font-weight: bold;"> YOUTUBE</div>
-                </div>
-            </a>
+        <div class="header">
+            MATT HERMAN<br>
         </div>
         
-        <div class="link link-b">
-            <a href="https://www.youtube.com/channel/UCuzAfmDrNT7O0cz6yeemKUQ">
-                <div class="fa fa-link">
-                    <div style="font-family: sans-serif; display: inline; font-weight: bold;"> KIDS ON CAMPUS</div>
-                </div>
-            </a>  
+        <div class="link-container">
+            <div class="link">
+                <a href="https://www.youtube.com/channel/UCuzAfmDrNT7O0cz6yeemKUQ"><img class="link-a" src="transparent.png"></a>
+            </div>
+            <div class="link link-spacer"></div>
+            <div class="link">
+                <a class="fa fa-youtube link-b" href="https://www.youtube.com/channel/UCot9vB4XaMxR06kfWvOy5LA"></a>
+            </div>
         </div>
         
     </body>
