@@ -14,12 +14,15 @@
 
         <!-- Set the background colour of the document -->
         <style>
-            body {
+            body, html {
               background: #000000;
               color:#cccccc;
-              margin: 0px;
-              padding: 0px;
-              border: 0px;
+              width: 100%;
+              height: 100%;
+              margin: 0;
+              padding: 0;
+              border: 0;
+              overflow: hidden;
             }
             canvas {
                       image-rendering: optimizeSpeed;
@@ -28,6 +31,7 @@
                       margin: 0px;
                       padding: 0px;
                       border: 0px;
+                      position:absolute;
             }
             :-webkit-full-screen #canvas {
                  width: 100%;
